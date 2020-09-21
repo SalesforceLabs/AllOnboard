@@ -1,0 +1,25 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<!--
+   	Author:         Paul Lucas
+    Company:        Salesforce
+    Description:    LightningFlowHeaderCmp.design
+    Date:           28-Aug-2019
+
+	History:
+	When            Who                 What
+	
+	TODO:
+
+-->
+<design:component label="Lightning Flow Header 2">
+    <design:attribute name="containerClass" label="Container Class" description="Class to apply the container"/>
+    <design:attribute name="firstSlotContent" label="First Slot Content" description="Markup for the first slot"/>
+    <design:attribute name="secondSlotContent" label="Second Slot Content" description="Markup for the second slot"/>
+    <design:attribute name="thirdSlotContent" label="Third Slot Content" description="Markup for the third slot"/>
+</design:component>

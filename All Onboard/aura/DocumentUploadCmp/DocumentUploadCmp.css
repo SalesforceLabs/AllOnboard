@@ -1,0 +1,114 @@
+/*
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ */
+ 
+.THIS .slds-card {
+    border: 1px solid rgb(221, 219, 218) !important;
+}
+
+.THIS .slds-visual-picker_vertical .slds-visual-picker__figure {
+    height: 5rem;
+}
+
+.THIS .slds-visual-picker_vertical,
+.THIS .slds-visual-picker_vertical .slds-visual-picker__figure {
+    width: 100%;
+}
+
+.THIS .allonboard-check-icon .slds-icon-text-default {
+    fill: rgb(255, 255, 255);
+}
+
+.THIS .allonboard-file-selector .slds-file-selector {
+    display: block;
+}
+
+.THIS .allonboard-file-selector .slds-file-selector__dropzone {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 1rem;
+}
+
+.THIS .allonboard-file-selector .slds-file-selector__body {
+    text-align: center;
+    display: block;
+    align-items: inherit;
+}
+
+.THIS .allonboard-file-selector .slds-file-selector__text {
+    margin-top: .75rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.THIS .allonboard-file-selector .slds-file-selector__button {
+    max-height: 1.875rem;
+    line-height: 1.875rem;
+}
+
+.THIS .allonboard-card .slds-card__header {
+    padding: .75rem .75rem 0;
+}
+
+.THIS .allonboard-file-card .forceContentFileCard {
+    max-width: 100%;
+    width: 100% !important;
+
+}
+
+.THIS .allonboard-file-card .slds-file {
+    border-bottom: none;
+}
+
+.THIS .allonboard-text-title {
+    font-weight: 700;
+}
+
+.THIS .allonboard-doc-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.THIS .allonboard-doc-icon img {
+    height: 100%;
+    width: auto;
+}
+
+.THIS .allonboard-document-name,
+.THIS .allonboard-document-name div,
+.THIS .allonboard-document-name span {
+    display: inline-block;
+}
+
+.THIS .allonboard-document-name + span.slds-is-absolute {
+    bottom: 10px;
+    right: 10px;
+}
+
+.THIS .allonboard-file-footer {
+    background-color: rgb(249, 249, 250);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+    border-right: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.THIS .allonboard-badge_saved {
+    background-color: rgb(4, 132, 75);
+    color: rgb(255, 255, 255);
+}
+
+.THIS .allonboard-badge_mandatory {
+    background-color: rgb(4, 132, 75);
+    color: rgb(255, 255, 255);
+}
+
+.THIS .allonboard-badge_mandatory {
+    background-color: rgb(0, 95, 178);
+    color: rgb(255, 255, 255);
+}

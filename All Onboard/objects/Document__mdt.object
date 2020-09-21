@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores details of required/optional documents for an application</description>
+    <fields>
+        <fullName>Accepted_File_Format__c</fullName>
+        <defaultValue>&quot;.pdf,.png,.jpg&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Comma-separated list of file extensions that can be uploaded in the format .ext, such as .pdf, .jpg, or .png</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Comma-separated list of file extensions that can be uploaded in the format .ext, such as .pdf, .jpg, or .png</inlineHelpText>
+        <label>Accepted File Format</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Category</label>
+        <referenceTo>Document_Category__mdt</referenceTo>
+        <relationshipLabel>Documents</relationshipLabel>
+        <relationshipName>Documents_del</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Description</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Document_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Document Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>File_Link__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URL of the template file.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The URL of the template for the specific flow document type.</inlineHelpText>
+        <label>File Link</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Icon__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The URL of the icon. The icon is displayed in the left hand side of the flow document name.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The URL of the icon. The icon is displayed in the left hand side of the flow document name.</inlineHelpText>
+        <label>Icon</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Mandatory__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if this document is required to pass the document check.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Indicates if this document is required to pass the document check.</inlineHelpText>
+        <label>Is Mandatory?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Score__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Points/Score for the flow document.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Points/Score for the flow document.</inlineHelpText>
+        <label>Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Flow Document</label>
+    <pluralLabel>Flow Documents</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,12 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<design:component label="Lightning Flow Progress Indicator">
+    <design:attribute name="activeStages" label="Active Stages"           description="Flow active stages" />
+    <design:attribute name="currentStage" label="Current Stage"           description="Flow current stage" />
+    <design:attribute name="type"         label="Progress Indicator Type" description="Changes the visual pattern of the indicator. Valid values are base and path. This value defaults to base" default="base" datasource="base,path" />
+</design:component>

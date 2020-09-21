@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Choice_Enter_Code</fullName>
+        <categories>All Onboard, Choice, Code, Enter Code</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choice - Enter Code</shortDescription>
+        <value>Enter code</value>
+    </labels>
+    <labels>
+        <fullName>Choice_Input_Email_Address</fullName>
+        <categories>All Onboard, Choice, Input, Email Address</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choice Input - Email Address</shortDescription>
+        <value>Email Address</value>
+    </labels>
+    <labels>
+        <fullName>Choice_Input_Email_Address_or_Session_Name</fullName>
+        <categories>All Onboard, Choice, Input, Email Address, Session Name</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choice Input - Email Address or Session Name</shortDescription>
+        <value>Email Address or Session Name</value>
+    </labels>
+    <labels>
+        <fullName>Choice_Input_Your_Code</fullName>
+        <categories>All Onboard, Choice, Input, Code</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choice Input - Your Code</shortDescription>
+        <value>Your authentication code</value>
+    </labels>
+    <labels>
+        <fullName>Choice_New</fullName>
+        <categories>All Onboard, Choice, New</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choice - New</shortDescription>
+        <value>✨ Start a new session</value>
+    </labels>
+    <labels>
+        <fullName>Choice_Reset_Code</fullName>
+        <categories>All Onboard, Choice, Reset, Code, Reset Code</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choice - Reset Code</shortDescription>
+        <value>Send another code</value>
+    </labels>
+    <labels>
+        <fullName>Choice_Resume</fullName>
+        <categories>All Onboard, Choice, Resume</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Choice - Resume</shortDescription>
+        <value>↪️ Resume an existing session</value>
+    </labels>
+    <labels>
+        <fullName>Cmp_PromptMessage</fullName>
+        <categories>All Onboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Message shown in delete prompt</shortDescription>
+        <value>Are you sure you want to delete this document?</value>
+    </labels>
+    <labels>
+        <fullName>Cmp_PromptNegativeButtonText</fullName>
+        <categories>All Onboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Negative button text for delete prompt</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>Cmp_PromptPositiveButtonText</fullName>
+        <categories>All Onboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Positive button text for delete prompt</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>Cmp_PromptTitle</fullName>
+        <categories>All Onboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Title of delete prompt</shortDescription>
+        <value>Delete document</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Error_Incorrect_Authentication_Code</fullName>
+        <categories>All Onboard, 2FA, Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Error - Incorrect Authentication Code</shortDescription>
+        <value>The code entered was incorrect or has expired. You may try again or request a new code.</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Heading_Personal_Details</fullName>
+        <categories>All Onboard, Heading, Personal Details</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Heading - Personal Details</shortDescription>
+        <value>Personal Details</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Heading_Welcome</fullName>
+        <categories>All Onboard, Heading, Welcome</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Heading - Welcome</shortDescription>
+        <value>Let&apos;s get started! 🚀</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Input_Authentication_Code</fullName>
+        <categories>All Onboard, Input, Authentication Code</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Input - Authentication Code</shortDescription>
+        <value>Authentication Code</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Input_Select_Session</fullName>
+        <categories>All Onboard, Input, Session</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Input - Select Session</shortDescription>
+        <value>Which session would you like to resume?</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Input_Session_Options</fullName>
+        <categories>All Onboard, Input, Session Options</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Input - Session Options</shortDescription>
+        <value>We will be sending an authentication code to the email address you nominate. #TRUST</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Message_No_Sessions_Found</fullName>
+        <categories>All Onboard, Message, No Sessions</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Message - No Sessions Found</shortDescription>
+        <value>No active sessions were found matching your input</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Message_Sessions_Found</fullName>
+        <categories>All Onboard, Message, Sessions Found</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Message - Sessions Found</shortDescription>
+        <value>We have found the following sessions matching your email.</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Subheading_Sent_Authentication_Code</fullName>
+        <categories>All Onboard, 2FA, Subheading</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Subheading - Sent Authentication Code</shortDescription>
+        <value>An authentication code has been sent to you. Please check your email and enter the code below.</value>
+    </labels>
+    <labels>
+        <fullName>Screen_Subheading_Welcome</fullName>
+        <categories>All Onboard, Subheading, Welcome</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Screen Subheading - Welcome</shortDescription>
+        <value>We will be asking for your contact details, identification and banking details (so you can get paid!).
+
+Feel free to pause the process at any time if you don&apos;t have the info on you and you can resume when you are ready.</value>
+    </labels>
+    <labels>
+        <fullName>Session_Name</fullName>
+        <categories>All Onboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Session Name</shortDescription>
+        <value>Flow</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,45 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<design:component label="Lightning Flow Letterhead">
+
+    <design:attribute name="flowLetterheadSettingName" label="*Flow letterhead setting record name"
+        description="Specify the name of your selected letter head setting from the custom metadata settings. Keep it blank if you only want to use attributes from the design panel."
+        required="true" />
+    <design:attribute name="backgroundColor" label="Background color"
+        description="Specify the background color. Default value is rgba(255, 255, 255, 0.3). Input to overwrite custom metadata settings." />
+    <design:attribute name="backgroundImageUrl" label="Background image url"
+        description="Specify the background image url. It could be a static resources image(/resource/image_link) or an external link. Input to overwrite custom metadata settings." />
+    <design:attribute name="backgroundRepeat" label="Background repeat property"
+        datasource="repeat,repeat-x,repeat-y,no-repeat"
+        description="Specify the background-repeat property. Valid values are repeat,repeat-x,repeat-y,no-repeat. Input to overwrite custom metadata settings." />
+    <design:attribute name="backgroundPosition" label="Background position property"
+        datasource="top left,top center,top right,center left,center center,center right,bottom left,bottom center,bottom right"
+        description="Specify the background-position property. Default value is center center. Input to overwrite custom metadata settings." />
+    <design:attribute name="backgroundSize" label="Background size property" datasource="auto,cover,contain"
+        description="Specify the background-size property. Valid values are auto,cover,contain. Input to overwrite custom metadata settings." />
+    <design:attribute name="logoImageUrl" label="Logo image url"
+        description="Specify the logo image url. It could be an static resources image(/resource/image_link) or an external link. Input to overwrite custom metadata settings." />
+    <design:attribute name="logoHeight" label="Logo height(px)"
+        description="Specify the logo height. Default value is 60. Input to overwrite custom metadata settings." />
+    <design:attribute name="height" label="Letterhead height(px)"
+        description="Specify the letterhead height. Default value is 115. Input to overwrite custom metadata settings." />
+    <design:attribute name="headline" label="Letterhead headline text"
+        description="Specify the headline text. Can be text or markup. Input to overwrite custom metadata settings." />
+    <design:attribute name="fontColor" label="Letterhead text color"
+        description="Specify the headline text font color. Default value is #333333. Input to overwrite custom metadata settings." />
+    <design:attribute name="fontSize" label="Letterhead font-size(px)"
+        description="Specify the headline text font size. Default value is 16. Input to overwrite custom metadata settings." />
+    <design:attribute name="paddingSize" label="Padding size" datasource="x-small,small,medium,large,x-large"
+        description="Specify the padding size. Valid values are x-small,small,medium,large,x-large. Input to overwrite custom metadata settings." />
+    <design:attribute name="alignment" label="Horizontal alignment" datasource="left,center,right"
+        description="Specify the horizontal alignment. Valid values are left,center,right. Input to overwrite custom metadata settings." />
+    <design:attribute name="verticalAlignment" label="Vertical alignment" datasource="top,middle,bottom"
+        description="Specify the vertical alignment. Valid values are top,middle,bottom. Input to overwrite custom metadata settings." />
+
+
+</design:component>

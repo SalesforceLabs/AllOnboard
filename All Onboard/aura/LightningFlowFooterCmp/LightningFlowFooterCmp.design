@@ -1,0 +1,20 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<design:component label="Lightning Flow Footer">
+    <design:attribute name="showProgress"        label="Show Progress Indicator" default="false" />
+    <design:attribute name="type"                label="Progress Indicator Type" description="Changes the visual pattern of the indicator. Valid values are base and path. This value defaults to base" default="base" datasource="base,path" />
+    <design:attribute name="activeStages"        label="Active Stages"           description="Flow Active Stages"  />
+    <design:attribute name="currentStage"        label="Current Stage"           description="Flow Current Stage"  />
+    
+	<design:attribute name="nextButtonLabel"     label="Next Button Label"       description="" default="Next"     />
+    <design:attribute name="previousButtonLabel" label="Previous Button Label"   description="" default="Previous" />
+    <design:attribute name="finishButtonLabel"   label="Finish Button Label"     description="" default="Finish"   />
+    <design:attribute name="pauseButtonLabel"    label="Pause Button Label"      description="" default="Pause"    />
+    <design:attribute name="actionType"          label="Action Type"             description="The action that the finish button will run after finishing the flow. Valid values are Default, URL and Record." default="Default" datasource="Default,URL,Record" />
+    <design:attribute name="actionTarget"        label="Action Target"           description="Target value of the action selected. If the action type is URL, action target will be the URL the finish button navigates to. If the action type is Record, it will be the record Id." />
+</design:component>

@@ -1,0 +1,75 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<aura:component access="global" implements="lightning:availableForFlowScreens"  controller="DocumentUploadController">
+
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/> 
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="documentWrapperList" type="List"/>
+    
+    <div class="slds-p-around_small">
+            <!-- Other component markup here -->
+        <lightning:spinner alternativeText="Loading" size="medium" aura:id="spinner"/>
+       
+        <lightning:tabset selectedTabId="details" >
+            <lightning:tab label="Details" id="details">
+                <force:recordView recordId="{!v.recordId}" />
+            </lightning:tab>
+            <aura:if isTrue="{!v.documentWrapperList.length > 0}">
+                <lightning:tab label="Uploaded Documents" id="documents">
+                    <div class="documentTab">
+                        <lightning:layout multipleRows="true">
+                                <lightning:layoutItem class="header" padding="around-small" size="4" >
+                                    <div class="header-column">
+                                        <p class="field-title slds-text-title_caps" style="font-weight:700" title="Document Type">Document Type</p>
+                                    </div>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem class="header" padding="around-small" size="4">
+                                    <div class="header-column">
+                                        <p class="field-title slds-text-title_caps" style="font-weight:700" title="Document Name">Document Name</p>
+                                    </div>
+                                </lightning:layoutItem>
+                                <lightning:layoutItem class="header" padding="around-small" size="4">
+                                    <div class="header-column">
+                                        <p class="field-title slds-text-title_caps" style="font-weight:700" title="Document Preview">Document Preview</p>
+                                    </div>
+                                </lightning:layoutItem>
+                           
+                        <aura:iteration items="{!v.documentWrapperList}" var="item" indexVar="documentTypeIdx">
+                                <aura:iteration items="{!item.uploadedDocuments}" var="singleItemDocument" indexVar="documentIdx">
+                                        <lightning:layoutItem padding="around-small" size="4">
+                                                <div class="content-column">
+                                                    <p class="content" title="Document Type">{!item.document.Document_Name__c}</p>
+                                                </div>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem padding="around-small" size="4">
+                                                <div class="content-column">
+                                                    <p class="content" title="Document Name" name="{!singleItemDocument.ContentDocumentId}">{!singleItemDocument.Title + '.' + singleItemDocument.FileExtension }</p>
+                                                </div>
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem padding="around-small" size="4">
+                                                <div class="content-column">
+                                                    <div class="content" title="Document Preview">
+                                                        <lightning:fileCard fileId="{!singleItemDocument.ContentDocumentId}" 
+                                                        hideDescription="true" />
+                                                    </div>
+                                                </div>
+                                            </lightning:layoutItem>
+                                </aura:iteration>
+                               
+                        </aura:iteration>
+                    </lightning:layout>
+                </div>
+                </lightning:tab>
+    
+            </aura:if>
+        </lightning:tabset>
+    </div>
+    
+</aura:component>

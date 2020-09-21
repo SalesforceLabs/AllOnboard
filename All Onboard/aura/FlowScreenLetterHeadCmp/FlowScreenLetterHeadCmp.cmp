@@ -1,0 +1,74 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<aura:component access="global" implements="lightning:availableForFlowScreens"
+                controller="FlowScreenLetterHeadController">
+
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+
+    <aura:attribute name="active" type="Boolean" default="true"/>
+    <aura:attribute name="flowLetterheadSettingName" type="String" default="Default"/>
+    <aura:attribute name="useFlowLetterheadSetting" type="Boolean" default="true"/>
+    <aura:attribute name="networkPrefix" type="String"/>
+
+    <!-- Image Setting-->
+    <aura:attribute name="backgroundColor" type="String"/>
+    <aura:attribute name="backgroundRepeat" type="String"/>
+    <aura:attribute name="backgroundPosition" type="String"/>
+    <aura:attribute name="backgroundSize" type="String"/>
+    <aura:attribute name="backgroundImageUrl" type="String"/>
+    <aura:attribute name="logoImageUrl" type="String"/>
+
+    <!-- Text Setting-->
+    <aura:attribute name="headline" type="String"/>
+    <aura:attribute name="fontColor" type="String"/>
+    <aura:attribute name="fontSize" type="Integer"/>
+
+    <!-- Layout Setting-->
+    <aura:attribute name="paddingSize" type="String"/>
+    <aura:attribute name="alignment" type="String"/>
+    <aura:attribute name="verticalAlignment" type="String"/>
+    <aura:attribute name="logoHeight" type="Integer"/>
+    <aura:attribute name="height" type="Integer"/>
+
+    <!-- Derived Setting -->
+    <aura:attribute name="backgroundStyleString" type="String"/>
+    <aura:attribute name="logoCssStyleString" type="String"/>
+    <aura:attribute name="letterheadMetadataSetting" type="Object"/>
+
+    <!-- Error Message Setting -->
+    <aura:attribute name="hasError" type="Boolean" default="false"/>
+    <aura:attribute name="errorMessage" type="String"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+
+    <div class="lhContainer slds-p-bottom_medium">
+        <aura:if isTrue="{!v.showSpinner}">
+            <lightning:spinner alternativeText="Loading" size="medium"/>
+        </aura:if>
+        <aura:if isTrue="{!v.active}">
+            <div class="{!v.showSpinner == true ? 'slds-hide':''}" style="display: table; width: 100%;">
+                <div class="{! 'slds-p-around_' + v.paddingSize + ' slds-text-align_' + v.alignment }"
+                     style="{!v.backgroundStyleString}">
+                    <div style="display: inline-block;">
+                        <div class="logo">
+                            <img alt="Logo" src="{! v.logoImageUrl }" style="{!v.logoCssStyleString}"/>
+                        </div>
+                        <div style="{! 'color:' + v.fontColor + ';' + 'font-size:' + v.fontSize + 'px;'}">
+                            <lightning:formattedRichText aura:id="headlineSlot" class="headline-slot">
+                            </lightning:formattedRichText>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!not(v.active)}">
+        </aura:if>
+        <aura:if isTrue="{!v.hasError}">
+            <p style="color:red">{!v.errorMessage}</p>
+        </aura:if>
+    </div>
+</aura:component>

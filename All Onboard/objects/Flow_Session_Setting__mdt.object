@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores the metadata on how the Flow Session runs.
+E.g. if it requires Two Factor Authentication or if it&apos;s in Maintenance, etc.</description>
+    <fields>
+        <fullName>Boolean_Value__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The value of the Configuration, e.g. if 2FA is &apos;Checked&apos; then it is on</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The value of the Configuration. Checked is true, unchecked is false</inlineHelpText>
+        <label>Boolean Value</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Configuration_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Configuration Name</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Time_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Date Time Value</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Date_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Date Value</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Flow_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Flow which this setting is for</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Flow API name this setting belongs to. If the flow was named &apos;My Flow&apos;, the API name would be &apos;My_Flow&apos; by default</inlineHelpText>
+        <label>Flow API Name</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Number Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Text_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Text Value</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Flow Session Setting</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>MasterLabel</columns>
+        <columns>Flow_API_Name__c</columns>
+        <columns>DeveloperName</columns>
+        <columns>Configuration_Name__c</columns>
+        <columns>Boolean_Value__c</columns>
+        <columns>Text_Value__c</columns>
+        <columns>Number_Value__c</columns>
+        <columns>Date_Value__c</columns>
+        <columns>Date_Time_Value__c</columns>
+        <columns>IsProtected</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <pluralLabel>Flow Session Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

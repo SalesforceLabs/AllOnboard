@@ -1,0 +1,106 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<!--
+   	Author:         Paul Lucas
+    Company:        Salesforce
+    Description:    qsyd_PromptCmp
+    Date:           13-Jan-2019
+
+	History:
+	When            Who                 What
+
+	TODO:
+
+-->
+<aura:component description="Simple prompt" access="global"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,lightning:availableForFlowScreens">
+
+    <aura:attribute name="title" type="String" access="global" default=""/>
+    <aura:attribute name="message" type="String" access="global" default=""/>
+    <aura:attribute name="theme" type="String" description="default, success, error, warning, info, offline"
+                    access="global" default=""/>
+    <aura:attribute name="context" type="String" access="global" default=""/>
+    <aura:attribute name="positiveButtonText" type="String" access="global" default="Yes"/>
+    <aura:attribute name="positiveButtonTheme" type="String" access="global"
+                    description="destructive, inverse, hint, neutral, success, brand" default="brand"/>
+    <aura:attribute name="negativeButtonText" type="String" access="global" default="No"/>
+    <aura:attribute name="negativeButtonTheme" type="String" access="global"
+                    description="destructive, inverse, hint, neutral, success, brand" default="neutral"/>
+
+    <!--Handler-->
+    <aura:handler action="{!c.handleShowPrompt}" event="c:PromptEvt"/>
+
+    <!--Public methods -->
+    <aura:attribute name="themes" type="Object" description="{DEFAULT : default, SUCCESS : success}"
+                    access="global" default="{DEFAULT : default, SUCCESS : success, ETC : etc}"/>
+
+    <aura:method name="showPrompt" action="{!c.handleShowPrompt}"
+                 description="Show prompt">
+        <aura:attribute name="title" type="String" default=""/>
+        <aura:attribute name="message" type="String" default=""/>
+        <aura:attribute name="theme" type="String" default=""/>
+        <aura:attribute name="context" type="String" default=""/>
+        <aura:attribute name="positiveButtonText" type="String" default="Yes"/>
+        <aura:attribute name="positiveButtonTheme" type="String"
+                        description="destructive, inverse, hint, neutral, success, brand" default="brand"/>
+        <aura:attribute name="negativeButtonText" type="String" default="No"/>
+        <aura:attribute name="negativeButtonTheme" type="String"
+                        description="destructive, inverse, hint, neutral, success, brand" default="neutral"/>
+    </aura:method>
+
+    <aura:method name="hidePrompt" action="{!c.handleHidePrompt}"
+                 description="Hide prompt">
+    </aura:method> 
+
+    <aura:if isTrue="{!v.theme != ''}">
+
+        <div role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id"
+             aria-describedby="prompt-message-wrapper" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <div class="{#'slds-modal__header slds-theme--alert-texture slds-theme--' + v.theme}" role="alert">
+                    <button type="button" class="slds-button slds-modal__close slds-button--icon-inverse"
+                            onclick="{!c.handleClosePrompt}">
+                        <lightning:icon iconName="utility:close" size="small" alternativeText="Close"/>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+
+                    <h2 class="slds-text-heading--medium" id="prompt-heading-id">
+                        <span class="slds-icon_container slds-no-flex slds-float_left">
+                            <span>
+                                <lightning:icon iconName="{!'utility:' + v.theme}" size="small"
+                                                alternativeText="{!v.theme}" variant="inverse"/>
+                            </span>
+                        </span>
+                        {!v.title}
+                    </h2>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div>
+                        <p>
+                            <aura:unescapedHtml value="{!v.message}"/>
+                        </p>
+                    </div>
+                </div>
+                <div class="slds-modal__footer ">
+                    <button id="{!v.positiveButtonText}" type="button"
+                            class="{#'slds-button slds-button--' + v.positiveButtonTheme}"
+                            onclick="{!c.handleButtonClick}">
+                        {!v.positiveButtonText}
+                    </button>
+                    <button id="{!v.negativeButtonText}" type="button"
+                            class="{#'slds-button slds-button--' + v.negativeButtonTheme}"
+                            onclick="{!c.handleButtonClick}">
+                        {!v.negativeButtonText}
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+
+</aura:component>

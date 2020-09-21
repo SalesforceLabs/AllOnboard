@@ -1,0 +1,35 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<!--
+   	Author:         Paul Lucas
+    Company:        Salesforce
+    Description:    PromptEvt
+    Date:           13-Jan-2019
+
+	History:
+	When            Who                 What
+
+	TODO:
+
+-->
+
+<aura:event type="APPLICATION" description="Prompt event" access="global">
+    <aura:attribute name="title" type="String" default=""/>
+    <aura:attribute name="message" type="String" default=""/>
+    <aura:attribute name="theme" type="String" description="default, success, error, warning, info, offline"
+                    default=""/>
+    <aura:attribute name="positiveButtonText" type="String" default="Yes"/>
+    <aura:attribute name="positiveButtonTheme" type="String"
+                    description="destructive, inverse, hint, neutral, success, brand" default="brand"/>
+    <aura:attribute name="negativeButtonText" type="String" default="No"/>
+    <aura:attribute name="negativeButtonTheme" type="String"
+                    description="destructive, inverse, hint, neutral, success, brand" default="neutral"/>
+
+    <aura:attribute name="context" type="String" default=""/>
+    <aura:attribute name="response" type="String" default=""/>
+</aura:event>

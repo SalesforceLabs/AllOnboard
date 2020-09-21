@@ -1,0 +1,53 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<!--
+   	Author:         Paul Lucas
+    Company:        Salesforce
+    Description:    LightningFlowHeaderCmp
+    Date:           28-Aug-2019
+
+	History:
+	When            Who                 What
+	
+	TODO:
+
+        - Provide the ability to specify the number of slots
+        - Accept slot content in the form of a json string
+        - Pass through aura markup?
+ -->
+
+<aura:component implements="lightning:availableForFlowScreens"
+                description="Lightning Flow Header">
+
+    <aura:attribute name="containerClass" type="String" description="Container class" access="global"/>
+    <aura:attribute name="firstSlotContent" type="String" description="Markup content for first content slot"
+                    access="global"/>
+    <aura:attribute name="secondSlotContent" type="String" description="Markup content for second content slot"
+                    access="global"/>
+    <aura:attribute name="thirdSlotContent" type="String" description="Markup content for third content slot"
+                    access="global"/>
+
+    <aura:handler name="init" value="{! this }" action="{! c.handleInit }"/>
+
+    <div class="{!'container ' + v.containerClass}" padding="around-medium">
+        <lightning:layout horizontalAlign="spread">
+            <lightning:layoutItem padding="around-small">
+                <lightning:formattedRichText aura:id="firstSlot" class="first-slot">
+                </lightning:formattedRichText>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <lightning:formattedRichText aura:id="secondSlot" class="second-slot">
+                </lightning:formattedRichText>
+            </lightning:layoutItem>
+            <lightning:layoutItem padding="around-small">
+                <lightning:formattedRichText aura:id="thirdSlot" class="third-slot">
+                </lightning:formattedRichText>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

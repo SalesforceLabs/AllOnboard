@@ -1,0 +1,18 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<design:component label="Lightning Confetti">
+    
+    <design:attribute name="duration" label="The duration of the effects, in seconds"
+                      description="The duration of the effects, in seconds"/>
+
+    <design:attribute name="cannon" label="Cannon effect" description="A basic cannon"/>
+    <design:attribute name="fireworks" label="Fireworks effect" description="Fireworks galore!"/>
+    <design:attribute name="confettiShower" label="Confetti shower effect" description="A shower of confetti"/>
+    <design:attribute name="winnerCelebration" label="Winner celebration effect" description="Winner winner chicken dinner"/>
+    <design:attribute name="burstMode" label="Burst mode effect" description="Bursting with confetti goodness"/>
+</design:component>

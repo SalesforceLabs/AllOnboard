@@ -1,0 +1,27 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<design:component label="Lightning Flow Document Upload">
+    <design:attribute name="sessionId" label="Record ID" description="Id of the parent record to upload documents to" />
+    <design:attribute name="category" label="Category" description="Name of the Flow Document Category record" />
+    <design:attribute name="targetScore" label="Target Score (Input)"
+        description="The Minimum total score to complete the document check for the specified category" />
+    <design:attribute name="totalScore" label="Total Score (Output)"
+        description="The sum of points of all the supporting documents that are currently uploaded" />
+    <design:attribute name="showTitle" label="Show Title"
+        description="Show category name as title at the top of the component" default="true" />
+
+    <!-- Custom labels -->
+    <design:attribute name="labelPromptNegativeButtonText" label="Delete Prompt Negative Button Text"
+        default="Cmp_PromptNegativeButtonText" description="Negative button text for the delete document prompt. If using a custom label, the value is the API name of the label." />
+    <design:attribute name="labelPromptPositiveButtonText" label="Delete Prompt Positive Button Text"
+        default="Cmp_PromptPositiveButtonText" description="Positive button text for the delete document prompt. If using a custom label, the value is the API name of the label." />
+    <design:attribute name="labelPromptTitle" label="Delete Prompt Message" default="Cmp_PromptMessage"
+        description="Detailed message for the delete document prompt. If using a custom label, the value is the API name of the label." />
+    <design:attribute name="labelPromptMessage" label="Delete Prompt Title" default="Cmp_PromptTitle"
+        description="Title of the delete document prompt header. If using a custom label, the value is the API name of the label." />
+</design:component>

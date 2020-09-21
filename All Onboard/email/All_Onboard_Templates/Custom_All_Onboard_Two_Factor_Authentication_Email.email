@@ -1,0 +1,15 @@
+<div style="width: 550px; margin: 0 auto;">
+<div style="height: 160px; width: 100%; background-color: #7BC4B9; text-align: center;">
+ <img src="https://qbranch-sydney.s3-ap-southeast-2.amazonaws.com/q_sydney_logo.jpeg" />
+</div>
+
+<div style="background-color: whitesmoke; padding: 0 2em 1em 2em; min-height: 540px;">
+ <p style="margin: 0; padding-top: 2em;">Hi! Your code is 
+ <span style="font-weight: bold;">{!Flow_Session__c.Two_Factor_Authentication_Code__c}</span>.</p>
+
+ <p>The authentication code is valid until <span style="font-weight: bold;">{!Flow_Session__c.Two_Factor_Authentication_Expiry__c}</span>.</p>
+
+<p>Thank You.<br/>
+{!Organization.Name}</p>
+</div>
+<div>

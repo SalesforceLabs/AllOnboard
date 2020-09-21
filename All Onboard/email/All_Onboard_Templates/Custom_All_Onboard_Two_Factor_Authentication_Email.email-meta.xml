@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template used to notify the owner of a Flow Session that includes their Two Factor Authentication Code</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Custom All Onboard - Two Factor Authentication Email</name>
+    <style>none</style>
+    <subject>{!Organization.Name} - Your Temporary Access Code</subject>
+    <textOnly>Hi! Your code is {!Flow_Session__c.Two_Factor_Authentication_Code__c}.
+
+The authentication code is valid until {!Flow_Session__c.Two_Factor_Authentication_Expiry__c}.
+
+Thank You.
+{!Organization.Name}</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

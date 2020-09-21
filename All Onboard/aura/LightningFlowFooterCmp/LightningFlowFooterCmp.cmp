@@ -1,0 +1,61 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    
+    <aura:attribute name="canPause"  type="Boolean" access="global" />
+    <aura:attribute name="canBack"   type="Boolean" access="global" />
+    <aura:attribute name="canNext"   type="Boolean" access="global" />
+    <aura:attribute name="canFinish" type="Boolean" access="global" />
+    
+    <aura:attribute name="nextButtonLabel"     type="String" default="Next"     access="global" />
+    <aura:attribute name="previousButtonLabel" type="String" default="Previous" access="global" />
+    <aura:attribute name="finishButtonLabel"   type="String" default="Finish"   access="global" />
+    <aura:attribute name="pauseButtonLabel"    type="String" default="Pause"    access="global" />
+    
+    <aura:attribute name="showProgress" type="Boolean"  default="false" access="global" />
+    <aura:attribute name="type"         type="String"   access="global" default="base" />
+    <aura:attribute name="activeStages" type="String[]" access="global" />
+    <aura:attribute name="currentStage" type="String"   access="global" />
+    
+    <aura:attribute name="actionType"   type="String" access="global" default="Default" />
+    <aura:attribute name="actionTarget" type="String" access="global" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="c:LightningFlowNavigationEvt" action="{!c.handleNavigationEvt}"/>
+    
+    <div aura:id="actionButtonBar" class="slds-clearfix slds-p-top_large slds-p-bottom_medium">
+        <lightning:layout horizontalAlign="spread">
+            <lightning:layoutItem  flexibility="auto">
+                <div class="slds-float_left">
+                    <aura:if isTrue="{!v.canPause}">
+                        <lightning:button aura:id="PAUSE" class="slds-m-left_small" label="{!v.pauseButtonLabel}" variant="neutral" onclick="{!c.onButtonPressed}" />
+                    </aura:if>
+                </div>
+            </lightning:layoutItem > 
+            <aura:if isTrue="{!and(v.showProgress, not(empty(v.activeStages)))}">
+                <lightning:layoutItem flexibility="grow" class="allonboard-progress">
+                    <c:LightningFlowProgressIndicatorCmp activeStages="{!v.activeStages}" currentStage="{!v.currentStage}" 
+                                                         useLabelAsValue="false" type="{!v.type}" />
+                </lightning:layoutItem>
+            </aura:if>
+            <lightning:layoutItem flexibility="auto">
+                <div class="slds-float_right">
+                    <aura:if isTrue="{!v.canBack}">
+                        <lightning:button aura:id="BACK" class="slds-m-left_x-small" label="{!v.previousButtonLabel}" variant="neutral" onclick="{!c.onButtonPressed}" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.canNext}">
+                        <lightning:button aura:id="NEXT" class="slds-m-right_small" label="{!v.nextButtonLabel}" variant="brand" onclick="{!c.onButtonPressed}" />
+                    </aura:if>
+                    <aura:if isTrue="{!v.canFinish}">
+                        <lightning:button aura:id="FINISH" class="slds-m-right_small" label="{!v.finishButtonLabel}" variant="brand" onclick="{!c.onButtonPressed}" />
+                    </aura:if>
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+</aura:component>

@@ -1,0 +1,177 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+ -->
+<aura:component controller="DocumentUploadController"
+                implements="lightning:availableForFlowScreens"
+                access="global">
+    <aura:attribute name="sessionId"        type="String"  />
+    <aura:attribute name="category"         type="String"  />
+    <aura:attribute name="documents"        type="List"    />
+    <aura:attribute name="selectedDocument" type="Object"  />
+    <aura:attribute name="targetScore"      type="Integer" />
+    <aura:attribute name="totalScore"       type="Integer" default="0"     />
+    <aura:attribute name="showTitle"        type="Boolean" default="true"  />
+    <aura:attribute name="showSpinner"      type="Boolean" default="false" />
+    
+    <aura:attribute name="labelPromptNegativeButtonText" type="String" default="Cmp_PromptNegativeButtonText" />
+    <aura:attribute name="labelPromptPositiveButtonText" type="String" default="Cmp_PromptPositiveButtonText" />
+    <aura:attribute name="labelPromptTitle"              type="String" default="Cmp_PromptTitle" />
+    <aura:attribute name="labelPromptMessage"            type="String" default="Cmp_PromptMessage" />
+    
+    <aura:attribute name="promptNegativeButtonText" type="String" />
+    <aura:attribute name="promptPositiveButtonText" type="String" />
+    <aura:attribute name="promptTitle"              type="String" />
+    <aura:attribute name="promptMessage"            type="String" />
+    
+    <aura:attribute name="width" type="String" description="Width of parent region" />
+    
+    <aura:attribute name="localId" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:handler action="{!c.handleDeletePrompt}" event="c:PromptEvt"/> 
+    
+    <aura:registerEvent name="navigationEvt" type="c:LightningFlowNavigationEvt" />
+    
+    <c:PromptCmp aura:id="prompt" 
+                 positiveButtonText="{!v.promptPositiveButtonText}"
+                 negativeButtonText="{!v.promptNegativeButtonText}" />
+    
+    <lightning:flexipageRegionInfo width="{!v.width}" />
+    
+    <div class="slds-m-vertical_small">
+        <aura:if isTrue="{!v.showTitle == true || not(empty(v.targetScore))}">
+            <lightning:layout class="slds-grid" multipleRows="true" horizontalAlign="spread">
+                <lightning:layoutItem size="12" smallDeviceSize="6" padding="around-small">
+                    <aura:if isTrue="{!v.showTitle == true}">
+                        <h2 class="slds-text-heading_medium allonboard-text-title">{!v.category}</h2>
+                    </aura:if>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="12" smallDeviceSize="6" padding="around-small">
+                    <aura:if isTrue="{!not(empty(v.targetScore))}">
+                        <h2 class="slds-text-heading_medium slds-text-align_right allonboard-text-title">
+                            {!v.totalScore + '/' + v.targetScore + ' points'}
+                        </h2>
+                    </aura:if>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:if>
+        
+        <aura:if isTrue="{!not(empty(v.documents))}">
+            <lightning:layout class="slds-grid_vertical-stretch" multipleRows="true">
+                <lightning:layoutItem size="12" smallDeviceSize="{!v.width == 'SMALL' ? '12' : '6'}" padding="around-small">
+                    <!-- List of documents in the current category -->
+                    <fieldset class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <aura:iteration items="{!v.documents}" var="doc">
+                                <div class="slds-visual-picker slds-visual-picker_vertical">
+                                    <input type="radio" id="{!doc.document.Id}" value="{!doc.document.Id}" name="{!v.localId}" 
+                                           onchange="{!c.handleClick}" 
+                                           checked="{!equals(v.selectedDocument.document.Id, doc.document.Id)}" />
+                                    <label for="{!doc.document.Id}">
+                                        <span class="slds-visual-picker__figure slds-visual-picker__text slds-is-relative">
+                                            <span class="allonboard-document-name">
+                                                <aura:if isTrue="{!not(empty(doc.document.Icon__c))}">
+                                                    <div class="slds-m-right_x-small slds-text-align_center allonboard-doc-icon">
+                                                        <img src="{!doc.document.Icon__c}" />
+                                                    </div>
+                                                </aura:if>
+                                                <span class="slds-text-heading_medium slds-m-bottom_x-small">
+                                                    {!doc.document.Document_Name__c}
+                                                </span>
+                                            </span>
+                                            <span class="slds-is-absolute">
+                                                <span class="slds-text-align_right">
+                                                    <aura:if isTrue="{!doc.document.Mandatory__c}">
+                                                        <lightning:badge label="Mandatory" class="allonboard-badge_mandatory" />
+                                                    </aura:if>
+                                                    <aura:if isTrue="{!doc.uploadedDocuments.length > 0}">
+                                                        <lightning:badge label="Saved" class="allonboard-badge_saved" />
+                                                    </aura:if>
+                                                    <aura:if isTrue="{!not(empty(v.targetScore))}">
+                                                        <lightning:badge label="{!doc.document.Score__c + ' points'}" />
+                                                    </aura:if>
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span class="slds-icon_container slds-visual-picker__text-check">
+                                            <aura:if isTrue="{!equals(v.selectedDocument.document.Id, doc.document.Id)}">
+                                                <lightning:icon class="allonboard-check-icon" iconName="utility:check" size="x-small" />
+                                            </aura:if>
+                                        </span>
+                                    </label>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                    </fieldset>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="12" smallDeviceSize="{!v.width == 'SMALL' ? '12' : '6'}" padding="around-small">
+                    <div class="slds-is-relative">
+                        <aura:if isTrue="{!v.showSpinner}">
+                            <lightning:spinner variant="brand" />
+                        </aura:if>
+                        <lightning:card class="allonboard-card" title="{!v.selectedDocument.document.Document_Name__c}">
+                            <aura:set attribute="actions">
+                                <aura:if isTrue="{!v.selectedDocument.document.Mandatory__c}">
+                                    <lightning:badge label="Mandatory" class="allonboard-badge_mandatory" />
+                                </aura:if>
+                                <aura:if isTrue="{!v.selectedDocument.uploadedDocuments.length > 0}">
+                                    <lightning:badge label="Saved" class="allonboard-badge_saved" />
+                                </aura:if>
+                                <aura:if isTrue="{!not(empty(v.targetScore))}">
+                                    <lightning:badge label="{!v.selectedDocument.document.Score__c + ' points'}" />
+                                </aura:if>
+                            </aura:set>
+                            <p class="slds-p-horizontal_small">
+                                <div class="slds-m-vertical_medium">
+                                    <lightning:layout multipleRows="true">
+                                        <lightning:layoutItem flexibility="grow">
+                                            {!v.selectedDocument.document.Description__c}
+                                        </lightning:layoutItem>
+                                        <lightning:layoutItem class="slds-p-top_x-small" flexibility="auto" alignmentBump="right">
+                                            <aura:if isTrue="{!not(empty(v.selectedDocument.document.File_Link__c))}">
+                                                <lightning:button iconName="utility:file" label="Download Form" onclick="{!c.handleLinkClick}"
+                                                                  value="{!v.selectedDocument.document.File_Link__c}"  />
+                                            </aura:if>
+                                        </lightning:layoutItem>
+                                    </lightning:layout>
+                                </div>
+                                <div class="slds-m-vertical_small">
+                                    <aura:iteration items="{!v.selectedDocument.uploadedDocuments}" var="uploaded">
+                                        <lightning:layout multipleRows="true">
+                                            <lightning:layoutItem size="12" smallDeviceSize="12" >
+                                                <div class="allonboard-file-card slds-m-bottom_x-small">
+                                                    <lightning:fileCard fileId="{!uploaded.ContentDocumentId}" 
+                                                                        description="{!uploaded.Description}"
+                                                                        hideDescription="true" />
+                                                    <div class="allonboard-file-footer slds-grid slds-grid_align-end">
+                                                        <lightning:button name="{!uploaded.ContentDocumentId}" label="Delete"
+                                                                          variant="destructive"
+                                                                          class="slds-m-around_x-small" onclick="{!c.handleDelete}" />
+                                                    </div>
+                                                </div>
+                                            </lightning:layoutItem>
+                                        </lightning:layout>
+                                    </aura:iteration>
+                                </div>
+                                
+                                <lightning:fileUpload name="{!v.selectedDocument.document.Id}"
+                                                      label= "{!v.selectedDocument.document.Document_Name__c}"
+                                                      multiple="true"
+                                                      accept="{!v.selectedDocument.document.Accepted_File_Format__c}"
+                                                      recordId="{!v.sessionId}"
+                                                      onuploadfinished="{!c.handleUploadFinished}"
+                                                      class="allonboard-file-selector" />
+                                
+                            </p>
+                        </lightning:card>
+                    </div>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </aura:if>
+    </div>
+    
+</aura:component>

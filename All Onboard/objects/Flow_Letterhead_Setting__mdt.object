@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores the styles and images for the flow letterhead</description>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field specifies whether the letterhead is available to display.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies whether the letterhead is available to display. The default value is false.</inlineHelpText>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Alignment__c</fullName>
+        <defaultValue>&apos;center&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field specifies the horizontal alignment style of the letterhead.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the horizontal alignment style of the letterhead. The default value is &apos;center&apos;.</inlineHelpText>
+        <label>Horizontal Alignment</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>left</fullName>
+                    <default>false</default>
+                    <label>left</label>
+                </value>
+                <value>
+                    <fullName>center</fullName>
+                    <default>true</default>
+                    <label>center</label>
+                </value>
+                <value>
+                    <fullName>right</fullName>
+                    <default>false</default>
+                    <label>right</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Background_color__c</fullName>
+        <defaultValue>&apos;rgba(255, 255, 255, 0.3)&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field specifies the background-color style property of the letterhead.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the background-color style property of the letterhead. The default value is rgba(255, 255, 255, 0.3)</inlineHelpText>
+        <label>Background color</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Background_image_url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field specifies the background-url property of the letterhead.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the background-url property of the letterhead. It could be a static resources image (/resource/image_link) or an external link.</inlineHelpText>
+        <label>Background image url</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Background_position__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field specifies the background-position style property.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the background-position style property.</inlineHelpText>
+        <label>Background position</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>top left</fullName>
+                    <default>false</default>
+                    <label>top left</label>
+                </value>
+                <value>
+                    <fullName>top center</fullName>
+                    <default>true</default>
+                    <label>top center</label>
+                </value>
+                <value>
+                    <fullName>top right</fullName>
+                    <default>false</default>
+                    <label>top right</label>
+                </value>
+                <value>
+                    <fullName>center left</fullName>
+                    <default>false</default>
+                    <label>center left</label>
+                </value>
+                <value>
+                    <fullName>center center</fullName>
+                    <default>false</default>
+                    <label>center center</label>
+                </value>
+                <value>
+                    <fullName>center right</fullName>
+                    <default>false</default>
+                    <label>center right</label>
+                </value>
+                <value>
+                    <fullName>bottom left</fullName>
+                    <default>false</default>
+                    <label>bottom left</label>
+                </value>
+                <value>
+                    <fullName>bottom center</fullName>
+                    <default>false</default>
+                    <label>bottom center</label>
+                </value>
+                <value>
+                    <fullName>bottom right</fullName>
+                    <default>false</default>
+                    <label>bottom right</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Background_repeat__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field specifies the background-repeat style property.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the background-repeat style property.</inlineHelpText>
+        <label>Background repeat</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>repeat</fullName>
+                    <default>false</default>
+                    <label>repeat</label>
+                </value>
+                <value>
+                    <fullName>repeat-x</fullName>
+                    <default>false</default>
+                    <label>repeat-x</label>
+                </value>
+                <value>
+                    <fullName>repeat-y</fullName>
+                    <default>false</default>
+                    <label>repeat-y</label>
+                </value>
+                <value>
+                    <fullName>no-repeat</fullName>
+                    <default>true</default>
+                    <label>no-repeat</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Background_size__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field specifies the background-size style property.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the background-size style property.</inlineHelpText>
+        <label>Background size</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>auto</fullName>
+                    <default>true</default>
+                    <label>auto</label>
+                </value>
+                <value>
+                    <fullName>cover</fullName>
+                    <default>false</default>
+                    <label>cover</label>
+                </value>
+                <value>
+                    <fullName>contain</fullName>
+                    <default>false</default>
+                    <label>contain</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Font_color__c</fullName>
+        <defaultValue>&apos;#333333&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field specifies the headline text font colour.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the headline text font colour. The default value is #333333.</inlineHelpText>
+        <label>Font color</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Font_size__c</fullName>
+        <defaultValue>20</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field specifies the headline text font size (px)</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the headline text font size (px). The default value is 16.</inlineHelpText>
+        <label>Font size</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Headline__c</fullName>
+        <defaultValue>&apos;Headline&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field specifies the headline text.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the headline text. The default value is &quot;Headline&quot;.</inlineHelpText>
+        <label>Headline</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Height_px__c</fullName>
+        <defaultValue>115</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Specify the height of the letter head component.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Specify the height of the letter head component. Default value is 115</inlineHelpText>
+        <label>Height (px)</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo_height_px__c</fullName>
+        <defaultValue>60</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field specifies the logo height (px).</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the logo height (px). The default value is 60.</inlineHelpText>
+        <label>Logo height(px)</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Logo_image_url__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field specifies the logo image url.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the logo image url. It could be a static resources image (/resource/image_link) or an external link.</inlineHelpText>
+        <label>Logo image url</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Padding_style__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field specifies the padding style of the letterhead.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the padding style of the letterhead. The default value is &apos;small&apos;.</inlineHelpText>
+        <label>Padding style</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>x-small</fullName>
+                    <default>false</default>
+                    <label>x-small</label>
+                </value>
+                <value>
+                    <fullName>small</fullName>
+                    <default>true</default>
+                    <label>small</label>
+                </value>
+                <value>
+                    <fullName>medium</fullName>
+                    <default>false</default>
+                    <label>medium</label>
+                </value>
+                <value>
+                    <fullName>large</fullName>
+                    <default>false</default>
+                    <label>large</label>
+                </value>
+                <value>
+                    <fullName>x-larger</fullName>
+                    <default>false</default>
+                    <label>x-larger</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Vertical_Alignment__c</fullName>
+        <defaultValue>&apos;top&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field specifies the vertical alignment style of the letterhead. The default value is &apos;top&apos;.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This field specifies the vertical alignment style of the letterhead.</inlineHelpText>
+        <label>Vertical Alignment</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>top</fullName>
+                    <default>true</default>
+                    <label>top</label>
+                </value>
+                <value>
+                    <fullName>middle</fullName>
+                    <default>false</default>
+                    <label>middle</label>
+                </value>
+                <value>
+                    <fullName>bottom</fullName>
+                    <default>false</default>
+                    <label>bottom</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Flow Letterhead Setting</label>
+    <pluralLabel>Flow Letterhead Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

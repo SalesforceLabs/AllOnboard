@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores the category name for a group of Flow Documents</description>
+    <label>Flow Document Category</label>
+    <pluralLabel>Flow Document Categories</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

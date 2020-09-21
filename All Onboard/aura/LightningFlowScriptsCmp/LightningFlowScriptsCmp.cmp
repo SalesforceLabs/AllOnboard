@@ -1,0 +1,52 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<!--
+   	Author:         Paul Lucas
+    Company:        Salesforce
+    Description:    LightningFlowScriptsCmp
+    Date:           28-Aug-2019
+
+	History:
+	When            Who                 What
+	
+	TODO:
+
+-->
+<aura:component implements="lightning:availableForFlowScreens"
+                description="Lightning Flow Scripts"
+                controller="LightningFlowScripts_CX"
+                access="global">
+
+    <aura:dependency resource="ltng:require"/>
+
+<!--    <ltng:require scripts="{!'/resource/' + v.pathToScript}"/>-->
+    <ltng:require scripts="{! ($SfdcSite.pathPrefix == null ? '' : $SfdcSite.pathPrefix) + '/resource/' + v.pathToScript}" />
+
+    <aura:attribute name="dynamicRequireStyles" type="Aura.Component[]" access="private"
+                    description="Stylesheet to include"/>
+    <aura:attribute name="flowAPIName" type="String" access="global"
+                    description="Flow API name associated with the stylesheet" default=""/>
+    <aura:attribute name="styleScopeClass" type="String" description="Class name used to scope the referenced styles"
+                    access="global" default="lightning-flow-scope" required="true"/>
+    <aura:attribute name="pathToStyle" type="String"
+                    description="Path to CSS file, uploaded as a static resource, sans the resource path.
+                                 Overrides the custom metadata configuration for 'Lightning Flow Styles' for the current flow API name.
+                                 If left empty, default to the packaged LightningFlowStyles static resource."
+                    access="global" default=""/>
+    <aura:attribute name="pathToScript" type="String"
+                    description="Path to Javascript file, uploaded as a static resource, sans the resource path"
+                    access="global" default="LightningFlowScripts"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.handleInit}"/>
+
+    {!v.dynamicRequireStyles}
+
+    <!-- Selector scope -->
+    <div class="{!v.styleScopeClass}"/>
+
+</aura:component>

@@ -1,0 +1,31 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<!--
+   	Author:         Paul Lucas
+    Company:        Salesforce
+    Description:    LightningFlowScriptsCmp.design
+    Date:           28-Aug-2019
+
+	History:
+	When            Who                 What
+	
+	TODO:
+
+-->
+<design:component label="Lightning Flow Scripts">
+    <design:attribute name="flowAPIName" label="Flow API name"
+                      description="Flow API name associated with the stylesheet"/>
+    <design:attribute name="pathToScript" label="Path to Static Resource Javascript file"
+                      description="Path to the Javascript file uploaded as a static resource, sans the resource path."/>
+    <design:attribute name="pathToStyle" label="Path to Static Resource CSS file"
+                      description="Path to CSS file, uploaded as a static resource, sans the resource path.
+                        Overrides the custom metadata configuration for 'Lightning Flow Styles' for the current flow API name.
+                        If left empty, default to the packaged LightningFlowStyles static resource."/>
+    <design:attribute name="styleScopeClass" label="Style Scope Class"
+                      description="Class name used to scope the referenced styles"/>
+</design:component>

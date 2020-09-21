@@ -1,0 +1,19 @@
+<!--
+ * Copyright (c) 2020, salesforce.com, inc.
+ * All rights reserved.
+ * SPDX-License-Identifier: BSD-3-Clause
+ * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+-->
+
+<aura:component implements="lightning:availableForFlowScreens" access="global">
+    <aura:attribute name="activeStages"    type="String[]" access="global" />
+    <aura:attribute name="currentStage"    type="String"   access="global" />
+    <aura:attribute name="useLabelAsValue" type="Boolean"  access="global" default="false" />
+    <aura:attribute name="type"            type="String"   access="global" default="base"  />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="allonboard-progress-indicator">
+        <lightning:progressIndicator aura:id="progressIndicator" currentStep="{!v.currentStage}" type="{!v.type}" />
+    </div>
+</aura:component>
