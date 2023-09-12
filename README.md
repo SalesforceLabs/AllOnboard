@@ -4,15 +4,15 @@ Hello,
 
 I'm currently investigating how to make the Download Form button work correctly (located in the Financial details section), as it is not functioning as intended (please refer to the screenshots below).
 
-![Download Form](https://raw.githubusercontent.com/zara-gm/AllOnboard/zara-gm-downloadForm/download-form.png "Download Form")
+![Download Form](https://raw.githubusercontent.com/zara-gm/AllOnboard/HELP-download-form/download-form.png "Download Form")
 
 The download form is not visible in the `Utility Flow - Create Records from Flow Session` 
 
-![Utility Flows](https://raw.githubusercontent.com/zara-gm/AllOnboard/zara-gm-downloadForm/utility-flow.png "Utility Flows")
+![Utility Flows](https://raw.githubusercontent.com/zara-gm/AllOnboard/HELP-download-form/utility-flow.png "Utility Flows")
 
-![content-document-link](https://raw.githubusercontent.com/zara-gm/AllOnboard/zara-gm-downloadForm/content-document-link.png "Content Document Link")
+![Content Document Link](https://raw.githubusercontent.com/zara-gm/AllOnboard/HELP-download-form/content-document-link.png "Content Document Link")
 
-We were able to find it in the code, but can't make any modifications. `src/aura/DocumentUploadCmp/DocumentUploadCmp.cmp`
+I was able to find it in the code, but I'm affraid that it won't be possible to modify due to being a managed package. `src/aura/DocumentUploadCmp/DocumentUploadCmp.cmp`
 
 ```JS
 <lightning:layoutItem class="slds-p-top_x-small" flexibility="auto" alignmentBump="right">
